@@ -17,9 +17,9 @@ var express = require("express"),
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
-    
-// mongoose.connect("mongodb://localhost/FestivalCamp");
-mongoose.connect("mongodb://jeremiah:jballer24@ds027749.mlab.com:27749/festivalcamp");
+
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb://jeremiah:jballer24@ds027749.mlab.com:27749/festivalcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
