@@ -18,7 +18,8 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes = require("./routes/index");
 
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || "mongodb://localhost/FestivalCamp"
+mongoose.connect(url);
 // mongoose.connect("mongodb://jeremiah:jballer24@ds027749.mlab.com:27749/festivalcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));

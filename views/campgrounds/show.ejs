@@ -6,7 +6,7 @@
           <img class="img-responsive" src="<%= campground.image %>">
           <div class="caption-full">
             <h4 class="pull-right campgroundPrice">
-              $<%=campground.price%>for<%if (campground.multiDay === "yes") {%>Multiple Days<% } else { %>1 Day<% } %>
+              $<%=campground.price%> for <%if (campground.multiDay === "yes") {%>Multiple Days<% } else { %>1 Day<% } %>
             </h4>
             <h4 class="campgroundName"><%=campground.name%></h4>
             <hr>
@@ -15,7 +15,7 @@
               <em>Submitted By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
             </p>
             <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
-              <div class="btnFestivals">
+              <div>
                 <a class="btn btn-warning" href="/campgrounds/<%=campground._id %>/edit">Edit</a>
                 <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
                   <button class="btn btn-danger">Delete</button>
