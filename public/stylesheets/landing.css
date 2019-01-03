@@ -1,0 +1,179 @@
+body {
+  background-color: #000;
+}
+
+.navbar-default {
+  z-index: 2;
+  background: none;
+  border:none;
+  margin-right: 1%;
+}
+
+#brand {
+  font-family: "Permanent Marker";
+  font-size: 35px;
+  color: red;
+  letter-spacing: 2.5px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+    #landing-header {
+      margin-top: 0px;
+      padding-bottom: 0px;
+    }
+}
+
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  width: 33%;
+  background: rgba(0,0,0,0.12);
+}
+
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  opacity: 0.35;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 25s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://coachella-2014-site.s3.amazonaws.com/wp-content/uploads/2013/11/29145020/Coachella_D001590_1000.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2018/01/18001910/EDCORL2017_1110_142222-2009_AGP.jpg);
+  animation-delay: 5s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://www.festivalsquad.com/wp-content/uploads/2018/04/lifeisbeautiful_2016_0916_0673-1500x1035.jpghttp://www.festivalsquad.com/wp-content/uploads/2017/07/feat.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2018/01/18023506/CDNYE2017_1231_201700-5892_IME.jpg);
+  animation-delay: 15s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/11/18111735/mltx2017_0508_002515-1408_adi.jpg);
+  animation-delay: 20s; 
+}
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+
+#landingSearch {
+  width: 325px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+
+.btn-md {
+  margin-top: 20px;
+}
+
+#landingRight {
+  color: white;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+#landingRight:hover {
+  color:red;
+}
+
+.viewAll {
+  background-color: rgba(0,0,0,0.3);
+  border: 3px solid rgb(28, 206, 177);
+  letter-spacing: 2.5px;
+  color: rgb(28, 206, 177);
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.viewAll:hover {
+  background-color: rgba(0,0,0,0.65);
+  border: 3px solid white;
+  letter-spacing: 2.5px;
+  color: white;
+  font-weight: 700;
+}
+
+.searchBtn {
+  background: rgb(255, 0, 0);
+  color: white;
+  border: red;
+  font-size: 15.5px;
+  margin-bottom:2px;
+}
+
+.searchBtn:hover {
+  background: rgb(200, 0, 0);
+  border: rgb(200, 0, 0);
+  color: white;
+}
+
+.centerForm {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+

@@ -1,0 +1,1330 @@
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    /*header css*/
+    .navbar {
+        background: rgba(0,0,0,0.85);
+        border: black;
+        border-radius: 0%;
+        color: white;
+        margin-bottom: -2px;
+    }
+    
+    .centerHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+    
+    #brand {
+        font-family: "Permanent Marker";
+        font-size: 27px;
+        color: red;
+    }
+    
+    .navbar ul li {
+        margin-top: 2px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .headerInfo {
+        font-size: 12px;
+    }
+    
+    #search {
+        width: 275px;
+        display: inline-block;
+        margin-left: 15px;
+    }
+    
+    .searchBtn {
+      background: rgb(255, 0, 0);
+      color: white;
+      border: red;
+      font-size: 15.5px;
+    }
+    
+    .searchBtn:hover {
+      background: rgb(200, 0, 0);
+      border: rgb(200, 0, 0);
+      color: white;
+    }
+    
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+        height: 55px;
+        margin-top: -2px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+         background-color: black;
+         color: white;
+    }
+
+/*filters css*/
+    .filters {
+        background: rgb(237, 239, 242);
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    
+    .filterLabel {
+        font-size: 7px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+        font-family: "K2D";
+        padding-left: 10px;
+    }
+    
+    #selectedBtn {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        letter-spacing:2.2px;
+        font-size: 10px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn {
+        background-color: white;
+        border-color: white;
+        color: black;
+        font-size: 8px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        border-color: black;
+    }
+    
+    #genreMore {
+        margin-left: 15px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        width: 125px;
+        border-radius: 25px;
+        font-family: "signika";
+        background-color: rgb(0,189,213);
+        border-color: rgb(0,189,213);
+    }
+
+    #genreMore:hover {
+        background-color:rgb(0, 158, 178);
+    }
+    
+    .hideFilter {
+        float: right;
+        padding-right: 30px;
+        padding-top: 7px;
+        cursor: pointer;
+        font-family: "Signika";
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
+    
+    .fa-times {
+        padding-right: 3px;
+        color: red;
+    }
+    
+    #showFilter {
+        margin-top: 5px;
+        display: none;
+        color: black;
+    }
+
+/*index css*/
+    .listing {
+        margin-top: 50px;
+        margin-bottom: 45px;
+    }
+
+    .listingImage {
+        text-align: center;
+    }
+    
+    img {
+        height: 225px;
+    }
+    
+    .listingDiv {
+        margin-top: 15px;
+    }
+    
+    .listingTop {
+        margin-bottom: 50px;
+    }
+
+    a.listingTitle{
+        font-size: 17px;
+        font-family: "Lora";
+    }
+    
+    .listingLocation {
+        font-size: 13px;
+        margin-top: 2px;
+        float: right;
+    }
+
+    .listingDescription {
+        text-align: justify;
+        font-size: 12px;
+    }
+    
+    .extraInfo {
+        margin-top: 30px;
+        background: rgb(250, 250, 250);
+        text-align: center;
+    }
+
+    #indexFeatures {
+        font-family: "Signika";
+        font-size: 14px;
+        width: 32%;
+        display: inline-block
+    }
+    
+    .orange {
+        color: rgb(196, 146, 53);
+    }
+    
+    .col-xs-8 {
+        width: 55% !important;
+    }
+    .col-xs-3 {
+        width: 45% !important;
+    }
+    
+    
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    /*header css*/
+    .navbar {
+        background: rgba(0,0,0,0.85);
+        border: black;
+        border-radius: 0%;
+        color: white;
+        margin-bottom: -2px;
+    }
+    
+    .centerHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+    
+    #brand {
+        font-family: "Permanent Marker";
+        font-size: 27px;
+        color: red;
+    }
+    
+    .navbar ul li {
+        margin-top: 2px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .headerInfo {
+        font-size: 12px;
+    }
+    
+    #search {
+        width: 275px;
+        display: inline-block;
+    }
+    
+    .searchBtn {
+      background: rgb(255, 0, 0);
+      color: white;
+      border: red;
+      font-size: 15.5px;
+    }
+    
+    .searchBtn:hover {
+      background: rgb(200, 0, 0);
+      border: rgb(200, 0, 0);
+      color: white;
+    }
+    
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+        height: 55px;
+        margin-top: -2px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+         background-color: black;
+         color: white;
+    }
+
+/*filters css*/
+    .filters {
+        background: rgb(237, 239, 242);
+        padding-top: 4px;
+        padding-left: 30px;
+        padding-bottom: 4px;
+    }
+    
+    .filterLabel {
+        font-size: 12px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+        font-family: "K2D";
+        padding-left: 15px;
+    }
+    
+    #selectedBtn {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn {
+        background-color: white;
+        border-color: white;
+        color: black;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        border-color: black;
+    }
+    
+    #genreMore {
+        margin-left: 15px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        width: 125px;
+        border-radius: 25px;
+        font-family: "signika";
+        background-color: rgb(0,189,213);
+        border-color: rgb(0,189,213);
+    }
+
+    #genreMore:hover {
+        background-color:rgb(0, 158, 178);
+    }
+    
+    .hideFilter {
+        float: right;
+        padding-right: 50px;
+        padding-top: 7px;
+        cursor: pointer;
+        font-family: "Signika";
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
+    
+    .fa-cheveron-up {
+        padding-right: 3px;
+        color: red;
+    }
+    
+    #showFilter {
+        margin-top: 5px;
+        display: none;
+    }
+
+/*index css*/
+    .listing {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    .listingImage {
+        text-align: center;
+    }
+    
+    img {
+        height: 225px;
+    }
+
+    .listingDiv {
+        margin-top: 15px;
+    }
+    
+    a.listingTitle{
+        font-size: 25px;
+        font-family: "Lora";
+    }
+    
+    .listingLocation {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .listingDescription {
+        margin-top: 50px;
+    }
+    
+    .extraInfo {
+        margin-top: 40px;
+        background: rgb(250, 250, 250);
+        text-align: center;
+    }
+
+    #indexFeatures {
+        font-family: "Signika";
+        font-size: 17px;
+        width: 32%;
+        display: inline-block
+    }
+    
+    .orange {
+        color: rgb(196, 146, 53);
+    }
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /*header css*/
+    .navbar {
+        background: rgba(0,0,0,0.85);
+        border: black;
+        border-radius: 0%;
+        color: white;
+        margin-bottom: -2px;
+    }
+    
+    .headerInfo {
+        font-size: 8px;
+    }
+    
+    .centerHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+    
+    #brand {
+        font-family: "Permanent Marker";
+        font-size: 27px;
+        color: red;
+    }
+    
+    .navbar ul li {
+        margin-top: 2px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .headerInfo {
+        font-size: 12px;
+    }
+    
+    #search {
+        width: 275px;
+        display: inline-block;
+    }
+    
+    .searchBtn {
+      background: rgb(255, 0, 0);
+      color: white;
+      border: red;
+      font-size: 15.5px;
+    }
+    
+    .searchBtn:hover {
+      background: rgb(200, 0, 0);
+      border: rgb(200, 0, 0);
+      color: white;
+    }
+    
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+        height: 55px;
+        margin-top: -2px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+         background-color: black;
+         color: white;
+    }
+
+/*filters css*/
+    .filters {
+        background: rgb(237, 239, 242);
+        padding-top: 4px;
+        padding-left: 30px;
+        padding-bottom: 4px;
+    }
+    
+    .filterLabel {
+        font-size: 12px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+        font-family: "K2D";
+        padding-left: 15px;
+    }
+    
+    #selectedBtn {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn {
+        background-color: white;
+        border-color: white;
+        color: black;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        border-color: black;
+    }
+    
+    #genreMore {
+        margin-left: 15px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        width: 125px;
+        border-radius: 25px;
+        font-family: "signika";
+        background-color: rgb(0,189,213);
+        border-color: rgb(0,189,213);
+    }
+
+    #genreMore:hover {
+        background-color:rgb(0, 158, 178);
+    }
+    
+    .hideFilter {
+        float: right;
+        padding-right: 85px;
+        padding-top: 7px;
+        cursor: pointer;
+        font-family: "Signika";
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
+    
+    .fa-times {
+        padding-right: 3px;
+        color: red;
+    }
+    
+    #showFilter {
+        margin-top: 5px;
+        display: none;
+    }
+
+/*index css*/
+    .listing {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    .listingImage {
+        text-align: center;
+    }
+    
+    img {
+        height: 225px;
+    }
+    
+    .listingDiv {
+        margin-top: 20px;
+    }
+
+    a.listingTitle{
+        font-size: 25px;
+        font-family: "Lora";
+    }
+    
+    .listingLocation {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .listingDescription {
+        margin-top: 50px;
+    }
+    
+    .extraInfo {
+        margin-top: 40px;
+        background: rgb(250, 250, 250);
+        text-align: center;
+    }
+
+    #indexFeatures {
+        font-family: "Signika";
+        font-size: 17px;
+        width: 32%;
+        display: inline-block
+    }
+    
+    .orange {
+        color: rgb(196, 146, 53);
+    }
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /*header css*/
+    .navbar {
+        background: rgba(0,0,0,0.85);
+        border: black;
+        border-radius: 0%;
+        color: white;
+        margin-bottom: -2px;
+    }
+    
+    .centerHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+    
+    #brand {
+        font-family: "Permanent Marker";
+        font-size: 27px;
+        color: red;
+    }
+    
+    .navbar ul li {
+        margin-top: 2px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .headerInfo {
+        font-size: 12px;
+    }
+    
+    #search {
+        width: 450px;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    
+    .searchBtn {
+      background: rgb(255, 0, 0);
+      color: white;
+      border: red;
+      font-size: 15.5px;
+    }
+    
+    .searchBtn:hover {
+      background: rgb(200, 0, 0);
+      border: rgb(200, 0, 0);
+      color: white;
+    }
+    
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+        height: 55px;
+        margin-top: -2px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+         background-color: black;
+         color: white;
+    }
+    
+/*filters css*/
+    .filters {
+        background: rgb(237, 239, 242);
+        padding-top: 4px;
+        padding-left: 30px;
+        padding-bottom: 4px;
+    }
+    
+    .filterLabel {
+        font-size: 12px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+        font-family: "K2D";
+        padding-left: 15px;
+    }
+    
+    #selectedBtn {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn {
+        background-color: white;
+        border-color: white;
+        color: black;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        border-color: black;
+    }
+    
+    #genreMore {
+        margin-left: 15px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        width: 125px;
+        border-radius: 25px;
+        font-family: "signika";
+        background-color: rgb(0,189,213);
+        border-color: rgb(0,189,213);
+    }
+
+    #genreMore:hover {
+        background-color:rgb(0, 158, 178);
+    }
+    
+    .hideFilter {
+        float: right;
+        padding-right: 85px;
+        padding-top: 7px;
+        cursor: pointer;
+        font-family: "Signika";
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
+    
+    .fa-times {
+        padding-right: 3px;
+        color: red;
+    }
+    
+    #showFilter {
+        margin-top: 5px;
+        display: none;
+    }
+
+/*index css*/
+    .listing {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    .listingImage {
+        text-align: center;
+    }
+    
+    img {
+        height: 225px;
+    }
+    
+    .listingDiv {
+        margin-top: 0;
+    }
+
+    a.listingTitle{
+        font-size: 25px;
+        font-family: "Lora";
+    }
+    
+    .listingLocation {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .listingDescription {
+        margin-top: 50px;
+    }
+    
+    .extraInfo {
+        margin-top: 40px;
+        background: rgb(250, 250, 250);
+        text-align: center;
+    }
+
+    #indexFeatures {
+        font-family: "Signika";
+        font-size: 17px;
+        width: 32%;
+        display: inline-block
+    }
+    
+    .orange {
+        color: rgb(196, 146, 53);
+    }
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+/*header css*/
+    .navbar {
+        background: rgba(0,0,0,0.85);
+        border: black;
+        border-radius: 0%;
+        color: white;
+        margin-bottom: -2px;
+    }
+    
+    .centerHeader{
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+    
+    #brand {
+        font-family: "Permanent Marker";
+        font-size: 27px;
+        color: red;
+    }
+    
+    .navbar ul li {
+        margin-top: 2px;
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+    
+    .headerInfo {
+        font-size: 12px;
+    }
+    
+    #search {
+        width: 500px;
+        margin-left: 15px;
+        display: inline-block;
+    }
+    
+    .searchBtn {
+      background: rgb(255, 0, 0);
+      color: white;
+      border: red;
+      font-size: 15.5px;
+    }
+    
+    .searchBtn:hover {
+      background: rgb(200, 0, 0);
+      border: rgb(200, 0, 0);
+      color: white;
+    }
+    
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+        height: 55px;
+        margin-top: -2px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+         background-color: black;
+         color: white;
+    }
+    
+/*filters css*/
+    .filters {
+        background: rgb(237, 239, 242);
+        padding-top: 4px;
+        padding-left: 30px;
+        padding-bottom: 4px;
+    }
+    
+    .filterLabel {
+        font-size: 12px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        padding-right: 5px;
+        font-family: "K2D";
+        padding-left: 15px;
+    }
+    
+    #selectedBtn {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn {
+        background-color: white;
+        border-color: white;
+        color: black;
+        letter-spacing:2.2px;
+        font-size: 12px;
+        font-weight: 900;
+        margin-top: 2px;
+    }
+    
+    .filterBtn:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        border-color: black;
+    }
+    
+    #genreMore {
+        margin-left: 15px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        width: 125px;
+        border-radius: 25px;
+        font-family: "signika";
+        background-color: rgb(0,189,213);
+        border-color: rgb(0,189,213);
+    }
+
+    #genreMore:hover {
+        background-color:rgb(0, 158, 178);
+    }
+    
+    .hideFilter {
+        float: right;
+        padding-right: 85px;
+        padding-top: 7px;
+        cursor: pointer;
+        font-family: "Signika";
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 900;
+    }
+    
+    .fa-times {
+        padding-right: 3px;
+        color: red;
+    }
+    
+    #showFilter {
+        margin-top: 5px;
+        display: none;
+    }
+    
+/*index css*/
+    .listing {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    .listingImage {
+        text-align: center;
+    }
+    
+    img {
+        height: 225px;
+    }
+
+    a.listingTitle{
+        font-size: 25px;
+        font-family: "Lora";
+    }
+    
+    .listingDiv {
+        margin-top: 0px;
+    }
+    
+    .listingLocation {
+        float: right;
+        margin-top: 8px;
+    }
+
+    .listingDescription {
+        margin-top: 50px;
+    }
+    
+    .extraInfo {
+        margin-top: 40px;
+        background: rgb(250, 250, 250);
+        text-align: center;
+    }
+
+    #indexFeatures {
+        font-family: "Signika";
+        font-size: 17px;
+        width: 32%;
+        display: inline-block
+    }
+    
+    .orange {
+        color: rgb(196, 146, 53);
+    }
+    
+}
+
+
+ 
+ 
+    
+/*show page css*/
+
+#main {
+    padding: 35px 35px;
+}
+
+.commentSection {
+    padding-left: 31px;
+    padding-right: 30px;
+}
+
+.thumbnail {
+    padding: 0;
+    width: 100%
+}
+
+.thumbnail img {
+   width: 100%; 
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.campgroundPrice { 
+    margin-right: 20px;
+}
+
+.campgroundName {
+    font-weight: 900;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+hr {
+    width: 90%;
+}
+
+.caption-full p {
+    width: 93%;
+    margin-left: 20px;
+    text-align: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#accordion {
+    margin-bottom: 20px;
+}
+
+#mdBtn {
+    font-size: 17px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+#mdBtn:hover {
+    color: white;
+}
+
+.mb-0 {
+    text-align: center;
+    color: white;
+    margin: auto;
+    text-decoration: none;
+    padding: 15px 0px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.iconSpace {
+    padding-right: 3px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+#collapseOne {
+    text-align: center;
+}
+
+#site {
+    margin: 25px 0px;
+}
+
+#lineupInfo {
+    margin-top: 20px;
+    font-family: "Signika";
+    font-size: 25px;
+}
+
+#lineupImg {
+    margin-top: 15px;
+    height: 500px;
+    width: 100%;
+}
+
+.addComment {
+    background-color: red;
+    border: red;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.addComment:hover, .addComment:focus {
+    background: rgb(200, 0, 0);
+    border: rgb(200, 0, 0);
+    color: white;
+}
+
+.addComment span {
+    margin-right: 5px;
+}
+
+.reviewTitle {
+    font-family: "Concert One";
+    color: red;
+    font-size: 20px;
+    margin-left: 7px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/*rating stars*/
+.starsRating {
+    display: inline-block;
+}
+
+.starsRating span {
+    font-family: "Signika";
+    font-weight: 900;
+    margin-right: 7px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.submittedStars {
+    margin-left: 30px;
+    margin-bottom: 7px;
+}
+
+.submittedStars span {
+    font-family: "Signika";
+    font-weight: 900;
+    margin-left: -30px;
+    margin-right: 7px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.starsRating input {
+    display: none;
+}
+
+.starsRating label {
+    float: right;
+    padding: 2px;
+    font-size: 24px;
+    color: #444;
+    transition: all .2s;
+}
+
+.starsRating label:before {
+    content: '\2605';
+}
+
+.starsRating input:checked ~ label:before {
+    color: gold;
+    transition: all .10s;
+}
+
+.starsRating label:hover {
+    transform: scale(1.3);
+}
+
+/*rating stars1*/
+.starsRating1 {
+    display: inline-block;
+}
+
+.starsRating1 span {
+    font-family: "Signika";
+    font-weight: 900;
+    margin-right: 7px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.submittedStars span {
+    font-family: "Signika";
+    font-weight: 900;
+    margin-left: -30px;
+    margin-right: 7px;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.starsRating1 input {
+    display: none;
+}
+
+.starsRating1 label {
+    float: right;
+    padding: 2px;
+    font-size: 24px;
+    color: #444;
+    transition: all .2s;
+}
+
+.starsRating1 label:before {
+    content: '\2605';
+}
+
+.starsRating1 input:checked ~ label:before {
+    color: gold;
+    transition: all .10s;
+}
+
+.starsRating1 label:hover {
+    transform: scale(1.3);
+}
+
+/*rated stars*/
+.stars {
+    display: inline-block;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    float: right;
+    padding: 2px;
+    font-size: 24px;
+    color: #444;
+    transition: all .2s;
+}
+
+.stars label:before {
+    content: '\2605';
+}
+
+.stars input:checked ~ label:before {
+    color: gold;
+}
+
+.btnFestivals {
+    margin-left: 650px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+#features span {
+    color: blue;
+    font-weight: 900;
+}
+
+.textArea {
+    font-size: 16px;
+    font-family: "K2D";
+    letter-spacing: 1px;
+}
+
+.editPost {
+    font-size: 15px;
+    letter-spacing: 1px
+}
+
+#features {
+    font-family: "Signika";
+    font-size: 17px;
+}
+
+.commentText {
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 17px;
+    margin-bottom: -3px;
+}
+
+.commentOptions {
+    margin-left: 35px;
+}
+
+
+/*edit page css*/
+.editTitle {
+    text-align: center;
+    font-family: "Concert One";
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.editBlack {
+    color: black;
+}
+
+.editFestival {
+    margin-left: 10px;
+    text-decoration: none;
+    color: red;
+}
+
+.editFestival:hover {
+    text-decoration: none;
+}
+
+
+.editSubmit {
+    background-color: rgba(0,0,0,0.8);
+    border-color: rgba(0,0,0,0.8);
+    font-size: 16px;
+    margin-top: 25px;
+}
+
+.editSubmit:hover {
+    background-color: rgba(0,0,0,0.84);
+}
+
+.fa-usd {
+    color: green;
+}
+
+/*extra css*/
+
+.fa-angle-double-down {
+    padding-right: 5px;
+}
+
+.form-group p {
+    margin-left: 8px;
+    margin-right: 5px;
+    display: inline;
+}
+
+.alert {
+    margin-bottom: 0px;
+}
+
+input:focus {
+    outline:none !important;
+}

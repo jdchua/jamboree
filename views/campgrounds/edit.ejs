@@ -1,0 +1,76 @@
+<% include ../partials/header %>
+
+    <div class="row">
+        <h1 class="editTitle"><span class="editBlack">Edit</span><a class="editFestival" href="/campgrounds/<%=campground._id%>"><%= campground.name %></a></h1>
+        <div style="width:65%; margin: 25px auto;">
+            <form action="/campgrounds/<%=campground._id%>/?_method=PUT" method="POST">
+                <div class="form-group">
+                    <label for="name">Name of Festival</label>
+                    <input class="form-control" type="text" name="campground[name]" value="<%=campground.name%>" required>
+                </div>                
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input class="form-control" type="text" name="campground[website]" value="<%=campground.website%>">
+                </div>                  
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input class="form-control" type="text" name="campground[genre]" value="<%=campground.genre%>">
+                </div>                
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input class="form-control" type="number" name="campground[price]" value="<%=campground.price %>" min="0.01" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="image url">Image of Festival (url)</label>
+                    <textarea class="form-control" name="campground[image]" rows="2" cols="70"><%= campground.image %></textarea>
+                </div> 
+                <div class="form-group">
+                    <label for="lineup">Image of Lineup (url)</label>
+                    <textarea class="form-control" name="campground[lineup]" rows="2" cols="70"><%= campground.lineup %></textarea>
+                </div> 
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" name="campground[description]" rows="4" cols="70"><%= campground.description %></textarea>
+                </div>                     
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" value="<%=campground.location%>">
+                </div>                
+                <div class="form-group">
+                    <label for="multiDay">Multi-Day Festival</label><br>
+                    <% if (campground.multiDay === "yes") { %>
+                        <input type="radio" name="campground[multiDay]" value="yes" checked><p>Yes</p>
+                        <input type="radio" name="campground[multiDay]" value="no"><p>No</p>
+                    <% } else { %>
+                        <input type="radio" name="campground[multiDay]" value="yes"><p>Yes</p>
+                        <input type="radio" name="campground[multiDay]" value="no" checked><p>No</p>
+                    <% } %>
+                </div>                
+                <div class="form-group">
+                    <label for="camping">Camping</label><br>
+                    <% if (campground.camping === "yes") { %>
+                        <input type="radio" name="campground[camping]" value="yes" checked><p>Yes</p>
+                        <input type="radio" name="campground[camping]" value="no"><p>No</p>
+                    <% } else { %>
+                        <input type="radio" name="campground[camping]" value="yes"><p>Yes</p>
+                        <input type="radio" name="campground[camping]" value="no" checked><p>No</p>
+                    <% } %>
+                </div>                
+                <div class="form-group">
+                    <label for="allAges">All Ages</label><br>
+                    <% if (campground.allAges === "yes") { %>
+                        <input type="radio" name="campground[allAges]" value="yes" checked><p>Yes</p>
+                        <input type="radio" name="campground[allAges]" value="no"><p>No</p>
+                    <% } else { %>
+                        <input type="radio" name="campground[allAges]" value="yes"><p>Yes</p>
+                        <input type="radio" name="campground[allAges]" value="no" checked><p>No</p>
+                    <% } %>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block editSubmit">SUBMIT</button>
+                </div>            
+            </form>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

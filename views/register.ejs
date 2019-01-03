@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <!-- Make site responsive on mobile/tablet -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>FestivalCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/register.css"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Signika|Fjalla+One" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <% if (error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>          
+            <% } %>
+            <% if (success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>   
+            <% } %>
+        </div>
+
+        <div id="loginBrand">
+            <a id="loginBrand" href="/">FestivalCamp</a>
+        </div>
+        
+        <div class="row mainForm">
+            <div class="loginOptions">
+                <div>New to FestivalCamp?</div>
+                <div><a href="/login">Already Registered?</a></div>       
+            </div>
+            <h4 style="text-align: center">REGISTER WITH A USERNAME</h4>
+            <div class="loginInput">
+                <form action="/login" method="post">
+                    <div class="form-group input-group input-group-lg ">
+                        <label class="loginLabels">USERNAME:</label>
+                        <input class="form-control" type="text" name="username">
+                    </div>
+                    <div class="form-group input-group input-group-lg">
+                        <label class="loginLabels">PASSWORD:</label>
+                        <input class="form-control" type="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn signupBtn">JOIN FESTIVALCAMP</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<% include ./partials/footer %>
