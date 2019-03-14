@@ -41,8 +41,8 @@ router.get("/", function(req, res){
                         multiDay: req.query.multiday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed
-
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
                     });
                 }
             });
@@ -63,7 +63,8 @@ router.get("/", function(req, res){
                         multiDay: req.query.multiday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
                     });
                 }
             });
@@ -84,7 +85,8 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
                     });
                 }
             });
@@ -105,7 +107,8 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
                     });
                 }
             });
@@ -126,7 +129,31 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
+
+                    });
+                }
+            });
+        });
+    } else if (req.query.allAges) {
+        //find campgrounds in DB
+        Campground.find({allAges: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Campground.find({allAges: "yes"}).count().exec(function (err, count) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render("campgrounds/index", {
+                        campgrounds: allCampgrounds,
+                        current: pageNumber,
+                        pages: Math.ceil(count / perPage),
+                        noMatch: noMatch,
+                        search: req.query.search,
+                        multiDay: req.query.mulitday,
+                        camping: req.query.camping,
+                        electronic: req.query.electronic,
+                        mixed: req.query.mixed,
+                        allAges: req.query.allAges
                     });
                 }
             });
@@ -147,7 +174,9 @@ router.get("/", function(req, res){
                         multiDay: false,
                         camping: false,
                         electronic: false,
-                        mixed: false
+                        mixed: false,
+                        allAges: false
+
                     });
                 }
             });
@@ -164,6 +193,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
    var lineup = req.body.lineup;
    var multiDay = req.body.multiDay;
    var camping = req.body.camping;
+   var allAges = req.body.allAges;
    var price = req.body.price;
    var image = req.body.image;
    var desc = req.body.description;
@@ -180,7 +210,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         var lat = data[0].latitude;
         var lng = data[0].longitude;
         var location = data[0].formattedAddress;
-        var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng, multiDay: multiDay, camping: camping, price: price, website: website, lineup: lineup, genre: genre};
+        var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng, multiDay: multiDay, camping: camping, price: price, website: website, lineup: lineup, genre: genre, allAges: allAges};
      // Create a new campground and save to DB
        Campground.create(newCampground, function(err, newlyCreated){
            if (err){

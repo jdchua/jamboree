@@ -11,7 +11,7 @@ body {
 
 #brand {
   font-family: "Permanent Marker";
-  font-size: 35px;
+  font-size: 45px;
   color: red;
   letter-spacing: 2.5px;
   font-weight: 900;
@@ -29,6 +29,16 @@ body {
     }
 }
 
+@media only screen and (max-width: 550px) {
+  #brand {
+    font-size: 35px;
+  }
+  
+  #landing-header {
+    margin-top: 200px;
+  }
+}
+
 
 #landing-header {
   z-index: 1;
@@ -41,7 +51,6 @@ body {
   padding-top: 10px;
   padding-bottom: 20px;
   width: 375px;
-  background: rgba(0,0,0,0.12);
 }
 
 
@@ -84,7 +93,7 @@ body {
   animation-delay: 5s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://www.festivalsquad.com/wp-content/uploads/2018/04/lifeisbeautiful_2016_0916_0673-1500x1035.jpghttp://www.festivalsquad.com/wp-content/uploads/2017/07/feat.jpg);
+  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/7/2018/03/22164616/BYDSOCAL2018_0316_192751-3816_BSK.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(4) { 
@@ -142,19 +151,20 @@ body {
 
 .viewAll {
   background-color: rgba(0,0,0,0.3);
-  border: 3px solid rgb(28, 206, 177);
-  letter-spacing: 2.5px;
-  color: rgb(28, 206, 177);
-  font-weight: 700;
-  margin-top: 20px;
-}
-
-.viewAll:hover {
-  background-color: rgba(0,0,0,0.65);
-  border: 3px solid white;
+  border: 2px solid white;
   letter-spacing: 2.5px;
   color: white;
   font-weight: 700;
+  margin-top: 20px;
+  transition: 0.50s ease-in-out;
+}
+
+.viewAll:hover {
+  border: 2px solid red;
+  letter-spacing: 2.5px;
+  color: red;
+  font-weight: 900;
+  transition: 0.50s ease-in-out;
 }
 
 .searchBtn {
@@ -174,6 +184,51 @@ body {
 .centerForm {
   margin-right: auto;
   margin-left: auto;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:nth-child(2){
+  margin-top: 30px;
+}
+
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 
