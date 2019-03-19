@@ -24,23 +24,19 @@ npm install
 
   * Genre of Music
   
-  * Camping allowed
-  
-  * Multi-Day
+  * Multi-day
   
   * All-ages
   
+  * Camping allowed
+  
 * Search for a specific festival based on search query
 
-* Leave a text review along with a rating (out of 5 stars) for a specific festival
+* Leave a text review along with a rating (out of 5 stars)
 
-* Authentication
-
-  * User login or registeration with username and password
+* Authentication (User login or registeration with username and password)
   
-* Authorization
-
-  * Users are only allowed to manage their own posts and reviews and not others
+* Authorization (Users are only allowed to manage their own posts and reviews)
 
 * Manage festival posts with basic functionalities 
 
@@ -52,6 +48,7 @@ npm install
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
 * [Bootstrap](https://getbootstrap.com/docs/3.3/)
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Jquery](https://jquery.com/)
 
 ### Back-end
 * [Node.JS](https://nodejs.org/en/)
