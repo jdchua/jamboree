@@ -1,5 +1,5 @@
 # FestivalCamp
-<img src="https://u.cubeupload.com/jnike/festivalCampV2.png">
+<img src="https://i.lensdump.com/i/ikiGlC.png">
 
 Web application where users can share and leave reviews for music festivals.  Allows registered users to have access to an all-in-one site for experiences and information on a specific music festival.
 
