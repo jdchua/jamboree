@@ -41,8 +41,9 @@ router.get("/", function(req, res){
                         multiDay: req.query.multiday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
                     });
                 }
             });
@@ -63,8 +64,9 @@ router.get("/", function(req, res){
                         multiDay: req.query.multiday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
                     });
                 }
             });
@@ -85,8 +87,9 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
                     });
                 }
             });
@@ -107,16 +110,17 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
                     });
                 }
             });
         });
-    } else if (req.query.mixed) {
+    } else if (req.query.variety) {
         //find campgrounds in DB
-        Campground.find({genre: "Mixed"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({genre: "Mixed"}).count().exec(function (err, count) {
+        Campground.find({genre: "Variety"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Campground.find({genre: "Variety"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
@@ -129,8 +133,33 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
+
+                    });
+                }
+            });
+        });
+    } else if (req.query.hiphop) {
+        //find campgrounds in DB
+        Campground.find({genre: "Hip-Hop"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Campground.find({genre: "Hip-Hop"}).count().exec(function (err, count) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    res.render("campgrounds/index", {
+                        campgrounds: allCampgrounds,
+                        current: pageNumber,
+                        pages: Math.ceil(count / perPage),
+                        noMatch: noMatch,
+                        search: req.query.search,
+                        multiDay: req.query.mulitday,
+                        camping: req.query.camping,
+                        electronic: req.query.electronic,
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
 
                     });
                 }
@@ -152,8 +181,9 @@ router.get("/", function(req, res){
                         multiDay: req.query.mulitday,
                         camping: req.query.camping,
                         electronic: req.query.electronic,
-                        mixed: req.query.mixed,
-                        allAges: req.query.allAges
+                        variety: req.query.variety,
+                        allAges: req.query.allAges,
+                        hiphop: req.query.hiphop
                     });
                 }
             });
@@ -174,8 +204,9 @@ router.get("/", function(req, res){
                         multiDay: false,
                         camping: false,
                         electronic: false,
-                        mixed: false,
-                        allAges: false
+                        variety: false,
+                        allAges: false,
+                        hiphop: false
                     });
                 }
             });
