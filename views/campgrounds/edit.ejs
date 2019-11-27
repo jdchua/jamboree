@@ -18,13 +18,17 @@
                     <label for="genre">Genre</label>
                     <select class="form-control" name="genre">
                         <% if (campground.genre == "Electronic") { %>
-                            <option>Electronic</option>
-                        <% } else if (campground.genre == "Hip-Hop") { %>
+                            <option selected>Electronic</option>
                             <option>Hip-Hop</option>
-                        <% } else if (campground.genre == "Variety") { %>
                             <option>Variety</option>
-                        <% } else if (campground.genre == "Mixed") { %>
-                            <option>Mixed</option> 
+                        <% } else if (campground.genre == "Hip-Hop") { %>
+                            <option>Electronic</option>
+                            <option selected>Hip-Hop</option>
+                            <option>Variety</option>
+                        <% } else if (campground.genre == "Variety") { %>
+                            <option>Electronic</option>
+                            <option>Hip-Hop</option>
+                            <option selected>Variety</option>
                         <% } %>
                     </select>
                 </div>
