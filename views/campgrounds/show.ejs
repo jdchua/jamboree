@@ -1,102 +1,5 @@
 <% include ../partials/header %>
 
-<!--<div class="row" id="main">-->
-<!--      <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>-->
-<!--        <div class="col-12">-->
-<!--          <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">-->
-<!--            <button id="festivalDelete" class="festivalEdit">Delete</button>-->
-<!--          </form>-->
-<!--          <a class="festivalEdit" href="/campgrounds/<%=campground._id %>/edit">Edit</a>-->
-<!--        </div>-->
-<!--      <% } %>-->
-<!--      <div class="col-12">-->
-<!--        <div class="row thumbnail">-->
-<!--          <div class="row col-12 showTitle">-->
-<!--              <h4 class="campgroundName col-8"><%=campground.name%></h4>-->
-<!--              <p class="col-4 showGenre orange"><%=campground.genre%></p>-->
-<!--          </div>-->
-<!--          <img class="img-responsive col-md-8" src="<%= campground.image %>">-->
-<!--          <div class="caption-full col-md-4">-->
-<!--            <div class="row showTitle">-->
-<!--              <div class="col-12 card">-->
-<!--                <div class="row">-->
-<!--                  <div class="site col-3 col-md-12">-->
-<!--                    <a href="<%=campground.website %>">site</a>-->
-<!--                  </div>-->
-<!--                  <div class="col-2 col-md-6" id="features">-->
-<!--                      <% if (campground.multiDay === "yes") { %>-->
-<!--                        <span style="color:green;">3</span>-->
-<!--                      <% } else { %>-->
-<!--                        <span style="color:gray;">3</span>-->
-<!--                      <% } %>-->
-<!--                    </div>  -->
-<!--                  <div class="col-2 col-md-6" id="features">-->
-<!--                      <% if (campground.camping === "yes") { %>-->
-<!--                          <span style="color:green;" class="fas fa-campground"></span>-->
-<!--                        <% } else { %>-->
-<!--                          <span style="color:gray;" class="fas fa-campground"></span>-->
-<!--                        <% } %> -->
-<!--                  </div>-->
-<!--                  <div class="col-2 col-md-6" id="features">-->
-<!--                      <% if (campground.allAges === "yes") { %>-->
-<!--                          <span style="color:green;">18+</span>-->
-<!--                        <% } else { %>-->
-<!--                          <span style="color:gray;">18+</span>-->
-<!--                        <% } %>                       -->
-<!--                  </div> -->
-<!--                  <div class="col-3 col-md-6" id="features">-->
-<!--                      <span>-->
-<!--                        <% if (campground.price >= 400) { %>-->
-<!--                          <% for(var i = 0; i < 4; i++) { %>-->
-<!--                            <i class="fa fa-usd"></i>-->
-<!--                          <% } %>-->
-<!--                        <% } else if (campground.price >= 300 && campground.price < 400) { %>-->
-<!--                          <% for(var i = 0; i < 3; i++) { %>-->
-<!--                            <i class="fa fa-usd"></i>-->
-<!--                          <% } %>-->
-<!--                        <% } else if (campground.price >= 200 && campground.price < 300) { %>-->
-<!--                          <% for(var i = 0; i < 2; i++) { %>-->
-<!--                            <i class="fa fa-usd"></i>-->
-<!--                          <% } %>                       -->
-<!--                        <% } else { %>-->
-<!--                          <% for(var i = 0; i < 1; i++) { %>-->
-<!--                            <i class="fas fa-dollar-sign"></i>-->
-<!--                          <% } %>                        -->
-<!--                        <% } %>                      -->
-<!--                      </span>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <hr>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--</div>-->
-<!--<div class="col-12">-->
-<!--  <div id="map"></div>-->
-<!--  <div id="accordion">-->
-<!--    <div class="card">-->
-<!--        <div class="card-header">-->
-<!--            <h5 class="mb-0 btn btn-primary btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
-<!--                <span class="iconSpace">LINEUP</span>-->
-<!--                <i class="fa fa-headphones" aria-hidden="true"></i>-->
-<!--              </h5>-->
-<!--        </div>-->
-<!--        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">-->
-<!--            <div class="card-body" id="lineupInfo">-->
-<!--                <% if (campground.lineup === "") { %>-->
-<!--                    TBD! Stay Tuned!-->
-<!--                <% } else { %>-->
-<!--                  <a href="<%= campground.lineup%>" target="_blank"><img id="lineupImg" src="<%= campground.lineup %>"></a>-->
-<!--                <% } %>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-
 <div class="row" id="main">
   <div class="col-md-7">
           <div class="thumbnail">
@@ -368,10 +271,6 @@
                       </div>
                   </div>
                   <% } %>
-
-                  
-                  <!--Edit comment form-->
-
                 </div>
 
                 <!--Printing the comment-->
@@ -452,12 +351,6 @@
         <% }) %>
     </div>
 </div>
-
-
-
-
-
-
 
 
 <script>
