@@ -1,5 +1,5 @@
 # FestivalCamp
-<img src="https://i.lensdump.com/i/ikiGlC.png">
+<img src="https://i.lensdump.com/i/iYsjHv.png">
 
 Web application where users can share and leave reviews for music festivals.  Allows registered users to have access to an all-in-one site for experiences and information on a specific music festival.
 
@@ -10,7 +10,7 @@ Working live demo: https://mysterious-temple-60569.herokuapp.com
 
 ### Clone or download this repository
 ```sh
-git clone https://github.com/jdchua/festivalApp.git
+git clone https://github.com/jdchua/jamboree.git
 ```
 
 ### Install dependencies
