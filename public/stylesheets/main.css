@@ -8,6 +8,7 @@ body {
 
 /*filters css*/
     .filters {
+        background-color: rgb(237, 239, 242);
         padding-top: 4px;
         padding-bottom: 4px;
         padding-left: 15px;
@@ -104,6 +105,10 @@ body {
         margin-bottom:0;
         padding-top: 1.5rem;
         background-color: #1F2833;
+    }
+    
+    .jumbotron div form {
+        margin-bottom: 10px;
     }
 
     #search {
