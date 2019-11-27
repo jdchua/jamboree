@@ -16,7 +16,7 @@ var geocoder = NodeGeocoder(options);
 
 // INDEX - show all campgrounds
 router.get("/", function(req, res){
-    var perPage = 4;
+    var perPage = 9;
     var pageQuery = parseInt(req.query.page);
     var pageNumber = pageQuery ? pageQuery : 1;
     var noMatch = null;
@@ -176,7 +176,6 @@ router.get("/", function(req, res){
                         electronic: false,
                         mixed: false,
                         allAges: false
-
                     });
                 }
             });

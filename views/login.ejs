@@ -2,7 +2,7 @@
     <head>
         <!-- Make site responsive on mobile/tablet -->
         <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <title>FestivalCamp</title>
+        <title>Jamboree</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/stylesheets/login.css"> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -24,29 +24,48 @@
         </div>
 
         <div id="loginBrand">
-            <a id="loginBrand" href="/">FestivalCamp</a>
+            <a id="loginBrand" href="/">Jamboree</a>
         </div>
-        
+                    
+        <div class="loginOptions">
+            <div id="loginBtn" onclick="login()">LOGIN</div>  
+            <div id="registerBtn" onclick="register()"><a>NEW TO JAMBOREE?</a></div>
+        </div>
+        <hr>
         <div class="row mainForm">
-            <div class="loginOptions">
-                <div><a href="/register">New to FestivalCamp?</a></div>
-                <div>Already Registered?</div>       
+            <div id="loginForm">
+                <div class="loginInput">
+                    <form action="/login" method="post">
+                        <div class="form-group input-group input-group-lg ">
+                            <label class="loginLabels">USERNAME:</label>
+                            <input class="form-control" type="text" name="username">
+                        </div>
+                        <div class="form-group input-group input-group-lg">
+                            <label class="loginLabels">PASSWORD:</label>
+                            <input class="form-control" type="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn signupBtn">SIGN IN</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <h4 style="text-align: center">SIGN IN WITH USERNAME</h4>
-            <div class="loginInput">
-                <form action="/login" method="post">
-                    <div class="form-group input-group input-group-lg ">
-                        <label class="loginLabels">USERNAME:</label>
-                        <input class="form-control" type="text" name="username">
-                    </div>
-                    <div class="form-group input-group input-group-lg">
-                        <label class="loginLabels">PASSWORD:</label>
-                        <input class="form-control" type="password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn signupBtn">SIGN IN</button>
-                    </div>
-                </form>
+            <div id="registerForm">
+                <div class="loginInput">
+                    <form action="/register" method="post">
+                        <div class="form-group input-group input-group-lg ">
+                            <label class="loginLabels">USERNAME:</label>
+                            <input class="form-control" type="text" name="username">
+                        </div>
+                        <div class="form-group input-group input-group-lg">
+                            <label class="loginLabels">PASSWORD:</label>
+                            <input class="form-control" type="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn signupBtn">JOIN FESTIVALCAMP</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 

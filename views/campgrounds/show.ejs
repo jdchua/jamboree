@@ -1,128 +1,224 @@
 <% include ../partials/header %>
 
+<!--<div class="row" id="main">-->
+<!--      <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>-->
+<!--        <div class="col-12">-->
+<!--          <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">-->
+<!--            <button id="festivalDelete" class="festivalEdit">Delete</button>-->
+<!--          </form>-->
+<!--          <a class="festivalEdit" href="/campgrounds/<%=campground._id %>/edit">Edit</a>-->
+<!--        </div>-->
+<!--      <% } %>-->
+<!--      <div class="col-12">-->
+<!--        <div class="row thumbnail">-->
+<!--          <div class="row col-12 showTitle">-->
+<!--              <h4 class="campgroundName col-8"><%=campground.name%></h4>-->
+<!--              <p class="col-4 showGenre orange"><%=campground.genre%></p>-->
+<!--          </div>-->
+<!--          <img class="img-responsive col-md-8" src="<%= campground.image %>">-->
+<!--          <div class="caption-full col-md-4">-->
+<!--            <div class="row showTitle">-->
+<!--              <div class="col-12 card">-->
+<!--                <div class="row">-->
+<!--                  <div class="site col-3 col-md-12">-->
+<!--                    <a href="<%=campground.website %>">site</a>-->
+<!--                  </div>-->
+<!--                  <div class="col-2 col-md-6" id="features">-->
+<!--                      <% if (campground.multiDay === "yes") { %>-->
+<!--                        <span style="color:green;">3</span>-->
+<!--                      <% } else { %>-->
+<!--                        <span style="color:gray;">3</span>-->
+<!--                      <% } %>-->
+<!--                    </div>  -->
+<!--                  <div class="col-2 col-md-6" id="features">-->
+<!--                      <% if (campground.camping === "yes") { %>-->
+<!--                          <span style="color:green;" class="fas fa-campground"></span>-->
+<!--                        <% } else { %>-->
+<!--                          <span style="color:gray;" class="fas fa-campground"></span>-->
+<!--                        <% } %> -->
+<!--                  </div>-->
+<!--                  <div class="col-2 col-md-6" id="features">-->
+<!--                      <% if (campground.allAges === "yes") { %>-->
+<!--                          <span style="color:green;">18+</span>-->
+<!--                        <% } else { %>-->
+<!--                          <span style="color:gray;">18+</span>-->
+<!--                        <% } %>                       -->
+<!--                  </div> -->
+<!--                  <div class="col-3 col-md-6" id="features">-->
+<!--                      <span>-->
+<!--                        <% if (campground.price >= 400) { %>-->
+<!--                          <% for(var i = 0; i < 4; i++) { %>-->
+<!--                            <i class="fa fa-usd"></i>-->
+<!--                          <% } %>-->
+<!--                        <% } else if (campground.price >= 300 && campground.price < 400) { %>-->
+<!--                          <% for(var i = 0; i < 3; i++) { %>-->
+<!--                            <i class="fa fa-usd"></i>-->
+<!--                          <% } %>-->
+<!--                        <% } else if (campground.price >= 200 && campground.price < 300) { %>-->
+<!--                          <% for(var i = 0; i < 2; i++) { %>-->
+<!--                            <i class="fa fa-usd"></i>-->
+<!--                          <% } %>                       -->
+<!--                        <% } else { %>-->
+<!--                          <% for(var i = 0; i < 1; i++) { %>-->
+<!--                            <i class="fas fa-dollar-sign"></i>-->
+<!--                          <% } %>                        -->
+<!--                        <% } %>                      -->
+<!--                      </span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <hr>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--</div>-->
+<!--<div class="col-12">-->
+<!--  <div id="map"></div>-->
+<!--  <div id="accordion">-->
+<!--    <div class="card">-->
+<!--        <div class="card-header">-->
+<!--            <h5 class="mb-0 btn btn-primary btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                <span class="iconSpace">LINEUP</span>-->
+<!--                <i class="fa fa-headphones" aria-hidden="true"></i>-->
+<!--              </h5>-->
+<!--        </div>-->
+<!--        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">-->
+<!--            <div class="card-body" id="lineupInfo">-->
+<!--                <% if (campground.lineup === "") { %>-->
+<!--                    TBD! Stay Tuned!-->
+<!--                <% } else { %>-->
+<!--                  <a href="<%= campground.lineup%>" target="_blank"><img id="lineupImg" src="<%= campground.lineup %>"></a>-->
+<!--                <% } %>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
 <div class="row" id="main">
-      <div class="col-md-8">
-        <div class="thumbnail">
-          <img class="img-responsive" src="<%= campground.image %>">
-          <div class="caption-full">
-            <h4 class="pull-right campgroundPrice">
-              $<%=campground.price%> for <%if (campground.multiDay === "yes") {%>Multiple Days<% } else { %>1 Day<% } %>
-            </h4>
-            <h4 class="campgroundName"><%=campground.name%></h4>
-            <hr>
-            <p><%= campground.description %></p>
-            <p>
-              <em>Submitted By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
-            </p>
-            <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
-              <div>
-                <a class="btn btn-warning" href="/campgrounds/<%=campground._id %>/edit">Edit</a>
-                <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
-                  <button class="btn btn-danger">Delete</button>
-                </form>
-              </div>
-            <% } %>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div id="map"></div>
-        <div id="accordion">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="mb-0 btn btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <span class="iconSpace">GENERAL INFO</span>
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-              </h5>
+  <div class="col-md-7">
+          <div class="thumbnail">
+            <img class="img-responsive" src="<%= campground.image %>">
+            <div class="row caption-full">
+              <!--<h4 class="pull-right campgroundPrice">-->
+              <!--  $<%=campground.price%> for <%if (campground.multiDay === "yes") {%>Multiple Days<% } else { %>1 Day<% } %>-->
+              <!--</h4>-->
+              <h4 class="col-8 campgroundName"><%=campground.name%></h4>
+              <h5 class="col-4 showGenre orange"><%=campground.genre%></h5>
+
+              <hr>
+              <p class="col-12 showDescription"><%= campground.description %></p>
+
             </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                <a id="site" type="button" class="btn btn-warning" href="<%=campground.website %>" target="_blank">Website</a>
-              </div>
-              <div class="card-body" id="features">
-                Multi-Day Festival: 
-                <% if (campground.multiDay === "yes") { %>
-                  <span style="color:green;" class="glyphicon glyphicon-ok"></span>
-                <% } else { %>
-                  <span style="color:red;" class="glyphicon glyphicon-remove"></span>
-                <% } %>
-              </div>                        
-              <div class="card-body" id="features">
-                Genre: <span><%= campground.genre %></span>
-              </div>                     
-              <div class="card-body" id="features">
-                Camping: 
-                <% if (campground.camping === "yes") { %>
-                    <span style="color:green;" class="glyphicon glyphicon-ok"></span>
+          </div>
+          <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
+            <div class="col-12">
+            <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+                <button id="festivalDelete" class="festivalEdit">Delete</button>
+            </form>
+            <a class="festivalEdit" href="/campgrounds/<%=campground._id %>/edit">Edit</a>
+            </div>
+          <% } %>
+  </div>
+  <div class="col-md-5">
+          <div id="map" class="map"></div>
+          <div id="accordion">
+            <div class="card">
+                <h5 class="mb-0 btn btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <span class="iconSpace">GENERAL INFO</span>
+                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </h5>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">                
+                
+                  <a href="<%=campground.website %>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Website</a>
+                </div>
+                <div class="card-body" id="features">
+                  Mulltiple Days:   
+                  <% if (campground.multiDay === "yes") { %>
+                    <i style="color:green;" class="fas fa-check"></i>
                   <% } else { %>
-                    <span style="color:red;" class="glyphicon glyphicon-remove"></span>
-                  <% } %> 
-              </div>                      
-              <div class="card-body" id="features">
-                All-Ages: 
-                <% if (campground.allAges === "yes") { %>
-                    <span style="color:green;" class="glyphicon glyphicon-ok"></span>
+                    <i style="color:red;" class="fas fa-ban"></i>
+                  <% } %>
+                </div>                        
+                <div class="card-body" id="features">
+                  Camping:  
+                  <% if (campground.camping === "yes") { %>
+                      <i style="color:green;" class="fas fa-check"></i>
                   <% } else { %>
-                    <span style="color:red;" class="glyphicon glyphicon-remove"></span>
+                      <i style="color:red;" class="fas fa-ban"></i>
+                    <% } %> 
+                </div>                      
+                <div class="card-body" id="features">
+                  All-Ages:  
+                  <% if (campground.allAges === "yes") { %>
+                      <i style="color:green;" class="fas fa-check"></i>
+                    <% } else { %>
+                      <i style="color:red;" class="fas fa-ban"></i>
                   <% } %>                       
-              </div>                      
-              <div class="card-body" id="features">
-                Price:                     
-                <span>
-                  <% if (campground.price >= 400) { %>
-                    <% for(var i = 0; i < 4; i++) { %>
-                      <i class="fa fa-usd"></i>
-                    <% } %>
-                  <% } else if (campground.price >= 300 && campground.price < 400) { %>
-                    <% for(var i = 0; i < 3; i++) { %>
-                      <i class="fa fa-usd"></i>
-                    <% } %>
-                  <% } else if (campground.price >= 200 && campground.price < 300) { %>
-                    <% for(var i = 0; i < 2; i++) { %>
-                      <i class="fa fa-usd"></i>
-                    <% } %>                       
-                  <% } else { %>
-                    <% for(var i = 0; i < 1; i++) { %>
-                      <i class="fas fa-dollar-sign"></i>
-                    <% } %>                        
-                  <% } %>                      
-                </span>
+                </div>                      
+                <div class="card-body" id="features">
+                  Price:                     
+                  <span>
+                    <% if (campground.price >= 400) { %>
+                      <% for(var i = 0; i < 4; i++) { %>
+                        <i class="fa fa-usd"></i>
+                      <% } %>
+                    <% } else if (campground.price >= 300 && campground.price < 400) { %>
+                      <% for(var i = 0; i < 3; i++) { %>
+                        <i class="fa fa-usd"></i>
+                      <% } %>
+                    <% } else if (campground.price >= 200 && campground.price < 300) { %>
+                      <% for(var i = 0; i < 2; i++) { %>
+                        <i class="fa fa-usd"></i>
+                      <% } %>                       
+                    <% } else { %>
+                      <% for(var i = 0; i < 1; i++) { %>
+                        <i class="fas fa-dollar-sign"></i>
+                      <% } %>                        
+                    <% } %>                      
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h5 class="mb-0 btn btn-primary btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <span class="iconSpace">LINEUP</span>
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-              </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body" id="lineupInfo">
-                <% if (campground.lineup === "") { %>
-                    TBD! Stay Tuned!
-                <% } else { %>
-                  <a href="<%= campground.lineup%>" target="_blank"><img id="lineupImg" src="<%= campground.lineup %>"></a>
-                <% } %>
+            <div class="card">
+                <h5 class="mb-0 btn btn-primary btn-block" id="mdBtn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <span class="iconSpace">LINEUP</span>
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                </h5>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body" id="lineupInfo">
+                  <% if (campground.lineup === "") { %>
+                      TBD! Stay Tuned!
+                  <% } else { %>
+                    <a href="<%= campground.lineup%>" target="_blank"><img id="lineupImg" src="<%= campground.lineup %>"></a>
+                  <% } %>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!--COMMENT SECTION START-->
-      <div class="row commentSection">
-        <div class="well col-md-12">
-          <!--Setting up the add new comment button that is used for collapsing-->
-          <div class="text-right">
-            <a class="addComment btn pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              ADD REVIEW
-            </a>
-          </div>
-          <!--Comment section title-->
-          <h4><strong>Reviews for<span class="reviewTitle"><%=campground.name%></span></strong></h4>
-          <!--Collapse Add a comment form START-->
-          <div class="collapse" id="collapseComment">
+</div>
+      
+<!--COMMENT SECTION START-->
+<div class="row commentSection">
+    <div class="well col-md-12">
+        <!--Comment section title-->
+        <div class="row">
+            <div class="col-8 commentTitle">
+              <p class="col-12">reviews for</p>
+              <p class="col-12"><%=campground.name%></p>
+            </div>
+            <div class="col-4 text-right">
+              <a class="addComment btn pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+                ADD REVIEW
+              </a>
+            </div>
+        </div>
+        <!--Collapse Add a comment form START-->
+        <div class="collapse" id="collapseComment">
             <div class="well" style="border-left: 5px solid #00C851;">
               <% if(!currentUser) { %>
                 <!--If the user is not logged in, direct him to the login page-->
@@ -156,31 +252,128 @@
                 </form>
               <% } %>
             </div>
-          </div>
-          <hr>
-          <!--Check if there are comments, if there are none say no comments.-->
-          <% if (campground.comments.length === 0) { %>
-            <em style="color: grey;">No reviews just yet...</em>
-          <% } %>
-          <!--Display comments by looping through them-->
-          <% campground.comments.forEach(function(comment) { %>
-            <div class="row">
+        </div>
+        <hr>
+        <!--Check if there are comments, if there are none say no comments.-->
+        <% if (campground.comments.length === 0) { %>
+          <em style="color: grey;">No reviews just yet...</em>
+        <% } %>
+        
+        <!--Display comments by looping through them-->
+        <% campground.comments.forEach(function(comment) { %>
+          <div class="row">
               <div class="col-md-12">
-                <strong>
+                <div class="row">
+                  <div class="col-6">
+                    <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
+                      <!--If the current user owns the comment, change the color of the user icon-->
+                      <span style="color: orange;" class="fas fa-user" aria-hidden="true"></span>
+                    <% } else { %>
+                      <!--Else just display it black-->
+                      <span class="fas fa-user" aria-hidden="true"></span>
+                    <% } %>
+                    <!--Print out the author username-->
+                    <strong>
+                      <%= comment.author.username %>
+                    </strong>
+                    <span class="commentDate pull-right"> <%= moment(comment.createdAt).fromNow() %></span>
+                  </div>
+                  <div class="col-6 commentOptions">
+                    <!--If the visitor is logged in and the owner of the comment, show the edit and delete buttons-->
+                    <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
+                      <!--Delete comment button-->
+                      <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
+                        <button id="commentDelete" class="commentEdit">Delete</button>
+                      </form>
+                      <!--Edit button used for collapsing the edit comment form-->
+                      <button class="commentEdit" role="button" data-toggle="collapse" href="#collapseEdit<%= comment._id %>" aria-expanded="false" aria-controls="collapse<%= comment._id %>">
+                        Edit
+                      </button>
+
+                    <% } %>
+                  </div>
                   <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
-                    <!--If the current user owns the comment, change the color of the user icon-->
-                    <span style="color: orange;" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                  <% } else { %>
-                    <!--Else just display it black-->
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    <div class="collapse col-12" id="collapseEdit<%= comment._id %>">
+                      <div class="well" style="border-left: 5px solid #ffbb33; margin-top: 15px;">
+                        <form id="edit-comment-form<%= comment._id %>" class="editComment" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                            <div class="form-group">
+                              <input class="form-control" type="text" disabled value="<%= currentUser.username %>">
+                            </div>
+                            <div class="form-group starsRating1">
+                              <span>Rate This Festival</span>
+                              <% if (comment.rating===5) { %>
+                                <input id="star51" type="radio" checked value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star51"></label>
+                                <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star41"></label>
+                                <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star31"></label>
+                                <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star21"></label>
+                                <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star11"></label>
+                              <% } else if (comment.rating === 4) { %>
+                                <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star51"></label>
+                                <input id="star41" type="radio" checked value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star41"></label>
+                                <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star31"></label>
+                                <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star21"></label>
+                                <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star11"></label>
+                              <% } else if (comment.rating === 3) { %>
+                                <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star51"></label>
+                                <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star41"></label>
+                                <input id="star31" type="radio" checked value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star31"></label>
+                                <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star21"></label>
+                                <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star11"></label>
+                              <% } else if (comment.rating === 2) { %>
+                                <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star51"></label>
+                                <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star41"></label>
+                                <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star31"></label>
+                                <input id="star21" type="radio" checked value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star21"></label>
+                                <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star11"></label>
+                              <% } else if (comment.rating === 1) { %>
+                                <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star51"></label>
+                                <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star41"></label>
+                                <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star31"></label>
+                                <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star21"></label>
+                                <input id="star11" type="radio" checked value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
+                                <label for="star11"></label>
+                              <% } %>
+                            </div>
+                            <div class="form-group">
+                              <textarea class="form-control textArea" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
+                            </div>
+                            <div class="form-group">
+                              <button class="editPost">Edit Review</button>
+                            </div>
+                        </form>
+                      </div>
+                  </div>
                   <% } %>
-                  <!--Print out the author username-->
-                  <%= comment.author.username %>
-                </strong>
-            
-                <!--Show when the comment was made-->
-                <span class="pull-right"><%= moment(comment.createdAt).fromNow() %></span>
-            
+
+                  
+                  <!--Edit comment form-->
+
+                </div>
+
                 <!--Printing the comment-->
                 <% if (comment.rating === 1) { %> 
                   <p class="commentText"><%= comment.text %></p>
@@ -253,101 +446,17 @@
                     <label for="star-1"></label>
                   </div>
                 <% } %>
-                <div class="commentOptions">
-                  <!--If the visitor is logged in and the owner of the comment, show the edit and delete buttons-->
-                  <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
-                    <!--Edit button used for collapsing the edit comment form-->
-                    <a class="btn btn-xs btn-warning" role="button" data-toggle="collapse" href="#collapseEdit<%= comment._id %>" aria-expanded="false" aria-controls="collapse<%= comment._id %>">
-                      Edit
-                    </a>
-                    <!--Delete comment button-->
-                    <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
-                      <button class="btn btn-xs btn-danger">Delete</button>
-                    </form>
-                    <!--Edit comment form-->
-                    <div class="collapse" id="collapseEdit<%= comment._id %>">
-                      <div class="well" style="border-left: 5px solid #ffbb33; margin-top: 15px;">
-                        <form id="edit-comment-form<%= comment._id %>" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
-                          <div class="form-group">
-                            <input class="form-control" type="text" disabled value="<%= currentUser.username %>">
-                          </div>
-                          <div class="form-group starsRating1">
-                            <span>Rate This Festival</span>
-                            <% if (comment.rating===5) { %>
-                              <input id="star51" type="radio" checked value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star51"></label>
-                              <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star41"></label>
-                              <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star31"></label>
-                              <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star21"></label>
-                              <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star11"></label>
-                            <% } else if (comment.rating === 4) { %>
-                              <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star51"></label>
-                              <input id="star41" type="radio" checked value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star41"></label>
-                              <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star31"></label>
-                              <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star21"></label>
-                              <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star11"></label>
-                            <% } else if (comment.rating === 3) { %>
-                              <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star51"></label>
-                              <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star41"></label>
-                              <input id="star31" type="radio" checked value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star31"></label>
-                              <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star21"></label>
-                              <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star11"></label>
-                            <% } else if (comment.rating === 2) { %>
-                              <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star51"></label>
-                              <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star41"></label>
-                              <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star31"></label>
-                              <input id="star21" type="radio" checked value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star21"></label>
-                              <input id="star11" type="radio" value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star11"></label>
-                            <% } else if (comment.rating === 1) { %>
-                              <input id="star51" type="radio" value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star51"></label>
-                              <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star41"></label>
-                              <input id="star31" type="radio" value=3 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star31"></label>
-                              <input id="star21" type="radio" value=2 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star21"></label>
-                              <input id="star11" type="radio" checked value=1 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
-                              <label for="star11"></label>
-                            <% } %>
-                          </div>
-                          <div class="form-group">
-                            <textarea class="form-control textArea" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
-                          </div>
-                          <div class="form-group">
-                            <button class="btn btn-warning btn-sm editPost">Edit Review</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  <% } %>
-                  <hr>
-                </div>
-              </div>
             </div>
-          <% }) %>
-        </div>
-      </div>
+          </div>
+          <hr>
+        <% }) %>
+    </div>
 </div>
+
+
+
+
+
 
 
 

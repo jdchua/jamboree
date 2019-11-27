@@ -1,5 +1,44 @@
-body {
+body, html {
   background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-image: url(https://coachella-2014-site.s3.amazonaws.com/wp-content/uploads/2013/11/29145020/Coachella_D001590_1000.jpg);
+  min-height: 100%;
+}
+
+#brand {
+  font-family: "Permanent Marker";
+  font-size: 22px;
+  color: deeppink;
+  letter-spacing: 1px;
+  font-weight: 900;
+  text-decoration: none;
+  margin: 8px 0px 8px 23px;
+  display: inline-block;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-toggle .icon-bar {
+    width: 24px;
+    height: 3px;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+}
+
+.navbar-toggle {
+  padding: 9px 0px;
 }
 
 .navbar-default {
@@ -9,183 +48,50 @@ body {
   margin-right: 1%;
 }
 
-#brand {
-  font-family: "Permanent Marker";
-  font-size: 45px;
-  color: red;
-  letter-spacing: 2.5px;
+.intro {
+  color: deeppink;
+  font-size: 25px;
   font-weight: 900;
-  text-decoration: none;
-}
-
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-    #landing-header {
-      margin-top: 0px;
-      padding-bottom: 0px;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-  #brand {
-    font-size: 35px;
-  }
-  
-  #landing-header {
-    margin-top: 200px;
-  }
-}
-
-
-#landing-header {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  margin-top: 28vh;
-  margin-bottom: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  width: 375px;
-}
-
-
-#landing-header h1 {
-  color: #fff;
-}
-
-.slideshow { 
-  opacity: 0.35;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.slideshow li { 
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  z-index: 0;
-  animation: imageAnimation 25s linear infinite; 
-}
-
-.slideshow li:nth-child(1) { 
-  background-image: url(https://coachella-2014-site.s3.amazonaws.com/wp-content/uploads/2013/11/29145020/Coachella_D001590_1000.jpg) 
-}
-.slideshow li:nth-child(2) { 
-  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2018/01/18001910/EDCORL2017_1110_142222-2009_AGP.jpg);
-  animation-delay: 5s; 
-}
-.slideshow li:nth-child(3) { 
-  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/7/2018/03/22164616/BYDSOCAL2018_0316_192751-3816_BSK.jpg);
-  animation-delay: 10s; 
-}
-.slideshow li:nth-child(4) { 
-  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2018/01/18023506/CDNYE2017_1231_201700-5892_IME.jpg);
-  animation-delay: 15s; 
-}
-.slideshow li:nth-child(5) { 
-  background-image: url(https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/2017/11/18111735/mltx2017_0508_002515-1408_adi.jpg);
-  animation-delay: 20s; 
-}
-
-
-@keyframes imageAnimation { 
-  0% { 
-    opacity: 0; 
-    animation-timing-function: ease-in;
-  }
-  10% {
-    opacity: 1;
-    animation-timing-function: ease-out;
-  }
-  20% {
-    opacity: 1
-  }
-  30% {
-    opacity: 0
-  }
-}
-
-/* Older browser support - .no-cssanimations class added by modernizr */
-.no-cssanimations .slideshow li {
-	opacity: 1;
-}
-
-#landingSearch {
-  width: 325px;
-  margin-top: 10px;
-  display: inline-block;
-}
-
-
-.btn-md {
-  margin-top: 20px;
-}
-
-#landingRight {
-  color: white;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-}
-
-#landingRight:hover {
-  color:red;
-}
-
-.viewAll {
-  background-color: rgba(0,0,0,0.3);
-  border: 2px solid white;
-  letter-spacing: 2.5px;
-  color: white;
-  font-weight: 700;
-  margin-top: 20px;
-  transition: 0.50s ease-in-out;
-}
-
-.viewAll:hover {
-  border: 2px solid red;
-  letter-spacing: 2.5px;
-  color: red;
-  font-weight: 900;
-  transition: 0.50s ease-in-out;
 }
 
 .searchBtn {
-  background: rgb(255, 0, 0);
+  background: deeppink;
   color: white;
-  border: red;
-  font-size: 15.5px;
-  margin-bottom:2px;
+  border: deeppink;
+  font-size: 15px;
+  margin-bottom: 3px;
 }
 
 .searchBtn:hover {
-  background: rgb(200, 0, 0);
-  border: rgb(200, 0, 0);
+  background: deeppink;
+  border: deeppink;
   color: white;
 }
 
-.centerForm {
-  margin-right: auto;
-  margin-left: auto;
+.searchBtn i {
+  font-size: 16px;
 }
 
+.viewAll {
+  background-color: deeppink;
+  border: 2px solid deeppink;
+  letter-spacing: 2.5px;
+  color: white;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: 0.50s ease-in-out;
+}
+
+#mySidenav #brand {
+  margin: 0;
+  font-size: 30px;
+}
+
+#mySidenav hr {
+  width: 75%;
+  margin-top: 5px;
+  border-top: 1.5px solid white;
+}
 
 .sidenav {
   height: 100%;
@@ -202,33 +108,100 @@ body {
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 0px 8px 0px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: white;
   display: block;
   transition: 0.3s;
 }
 
-.sidenav a:nth-child(2){
-  margin-top: 30px;
-}
-
-.sidenav a:hover{
-  color: #f1f1f1;
+.sideNavContent {
+  transition: 0.2s;
 }
 
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 30px;
   margin-left: 50px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+#landingSearch, #landingSearch::-webkit-input-placeholder {
+  width: 300px;
+  margin-top: 10px;
+  margin-right: 5px;
+  display: inline-block;
+  font-size: 18px;
+  height: 35px;
 }
 
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  margin-top: 28vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+}
 
+@media only screen and (min-width: 768px) {
+  #brand {
+    font-size: 24px;
+  }
+  
+  #landingRight, #landingRight1 {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.5s ease-in-out;
+  }  
+  
+  #landingRight:hover, #landingRight1:hover {
+    color: deeppink;
+  }
+  
+  .intro {
+    font-size: 30px;
+  }
+  
+  #landing-header {
+    width: 500px;
+  }
+  
+  #landingSearch, #landingSearch::-webkit-input-placeholder {
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+  }
+  
+  .searchBtn {
+    margin-bottom: 5px;
+  }
+  
+  .searchBtn i {
+    font-size: 20px;
+    padding: 2px;
+  }
+  
+  .viewAll {
+    margin-top: 15px;
+  }
+  
+  .viewAll:hover {
+    background-color: white;
+    color: deeppink;
+    border-color: white;
+  }
+  
+  .btn {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  
+}

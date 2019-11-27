@@ -1,8 +1,8 @@
 <% include ../partials/header %>
 
     <div class="row">
-        <h1 class="editTitle">Submit a New Festival</h1> 
-        <div style="width:65%; margin: 25px auto;">
+        <h1 class="col-12 newTitle">Submit a New Festival</h1> 
+        <div style="width:70%; margin: 25px auto;">
             <form action="/campgrounds" method="POST">
                 <div class="form-group">
                     <label for="name">Name of Festival</label>
@@ -36,20 +36,38 @@
                     <label for="location">Location</label>
                     <input class="form-control" type="text" name="location" id="location" placeholder="Las Vegas, NV">
                 </div>
-                <div class="form-group">
-                    <label for="multiDay">Multi-Day Festival</label><br>
-                    <input type="radio" name="multiDay" value="yes"><p>Yes</p>
-                    <input type="radio" name="multiDay" value="no"><p>No</p>
+                <div class="row form-group">
+                    <label class="col-12" for="multiDay">Multi-Day Festival</label><br>
+                    <label class="col-3">
+                        <input type="radio" name="multiDay" value="yes">
+                        Yes
+                    </label>
+                    <label class="col-3">
+                        <input type="radio" name="multiDay" value="no">
+                        No
+                    </label>
                 </div>
-                <div class="form-group">
-                    <label for="camping">Camping</label><br>
-                    <input type="radio" name="camping" value="yes"><p>Yes</p>
-                    <input type="radio" name="camping" value="no"><p>No</p>
+                <div class="row form-group">
+                    <label class="col-12" for="camping">Camping</label><br>
+                    <label class="col-3">
+                        <input type="radio" name="camping" value="yes">
+                        Yes
+                    </label>
+                    <label class="col-3">
+                        <input type="radio" name="camping" value="no">
+                        No
+                    </label>
                 </div>                
-                <div class="form-group">
-                    <label for="allAges">All Ages</label><br>
-                    <input type="radio" name="allAges" value="yes"><p>Yes</p>
-                    <input type="radio" name="allAges" value="no"><p>No</p>
+                <div class="row form-group">
+                    <label class="col-12" for="allAges">All Ages</label><br>
+                    <label class="col-3">
+                        <input type="radio" name="allAges" value="yes">
+                        Yes
+                    </label>
+                    <label class="col-3">
+                        <input type="radio" name="allAges" value="no">
+                        No
+                    </label>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-primary btn-block editSubmit">Submit!</button>

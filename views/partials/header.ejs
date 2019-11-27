@@ -1,53 +1,63 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <!-- Make site responsive on mobile/tablet -->
         <meta name="viewport" content="width=device-width, initial-scale=1">    
         <title>FestivalCamp</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/main.css"> 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
         <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Faster+One|Permanent+Marker|Signika|K2D|Lora:700:400,700|Concert+One" rel="stylesheet">
     </head>
+    
     <body>
   
-    <nav class="navbar navbar-default">
-        <div class="centerHeader">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" id="brand" href="/campgrounds">FestivalCamp</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav">
-                <li>
-                  <p>
-                    <form action="/campgrounds" method="GET" class="form-inline">
-                      <div class="form-group">
-                        <input type="text" name="search" placeholder="Search For Festivals" id="search" class="form-control"> 
-                        <button type=submit class="btn searchBtn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                      </div>
-                    </form>
-                  </p>
-                </li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                  <% if(!currentUser){ %>
-                      <li class="headerInfo"><a href="/login">SIGN IN</a></li>
-                      <li class="headerInfo"><a href="/register">REGISTER</a></li>
-                  <% } else { %>
-                      <li><a class="headerInfo" href="/campgrounds/new">Submit <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
-                      <li><a class="headerInfo" href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                      <li><a class="headerInfo" href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                  <% } %>
-              </ul>
-            </div>
-        </div>
-    </nav>
+    <!--<nav class="navbar sticky-top navbar-default">-->
+    <!--    <div class="centerHeader">-->
+    <!--        <a href="/login">-->
+    <!--          <img src="https://image.flaticon.com/icons/svg/138/138669.svg">-->
+    <!--            <a class="submitBtn" href="/campgrounds/new">-->
+    <!--                <i class="fas fa-plus-circle"></i>-->
+    <!--            </a>-->
+    <!--        </a>-->
+    <!--        <a class="navbar-brand" id="brand" href="/campgrounds">Jamboree</a>-->
+    <!--    </div>-->
+    <!--</nav>-->
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeMainNav()">&times;</a>
+        <% if(!currentUser){ %>
+            <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a id="landingRight" href="/login">SIGN IN</a></li>
+            <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a id="landingRight1" href="/login">REGISTER</a></li>
+        <% } else { %>
+            <li><a  href="#">Signed In As <%= currentUser.username %></a></li>
+            <li><a class="submitBtn" href="/campgrounds/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
+            <li><a href="/logout">SIGN OUT</a></li>
+        <% } %>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    
+  <a class="navbar-brand" id="brand" href="/campgrounds">Jamboree</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="openMainNav()">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
+    <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+            <li class="<%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a id="landingRight" href="/login">SIGN IN</a></li>
+            <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a id="landingRight1" href="/login">REGISTER</a></li>
+        <% } else { %>
+            <li><a id="landingRight" href="#">Signed In As <%= currentUser.username %></a></li>
+            <li><a id="landingRight" class="submitBtn" href="/campgrounds/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
+            <li><a id="landingRight1" href="/logout">SIGN OUT</a></li>
+        <% } %>
+    </ul>
+  </div>
+  
+</nav>
 
 
     
