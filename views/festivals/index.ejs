@@ -7,7 +7,7 @@
     <p class="jumbotronTitle">
       Let's Find The Next Festival.
     </p>
-    <form action="/campgrounds" method="GET" class="form-inline">
+    <form action="/festivals" method="GET" class="form-inline">
       <div id="search" class="form-group row">
         <input type="text" name="search" placeholder="Search For Festivals" class="form-control col-8">
         <div class="searchBtn input-group-append">
@@ -19,7 +19,7 @@
 </div>
 
 <!--filters -->
-<form action="/campgrounds" method="GET">
+<form action="/festivals" method="GET">
       <div class="form-group filters">
         <span>
           <label for="Show All" class="filterLabel">SORT BY:</label>
@@ -108,11 +108,11 @@
 
 <!--listings-->
 <div class="listingContainer row ">
-  <% campgrounds.forEach(function(campground){ %>
+  <% festivals.forEach(function(campground){ %>
     <div class="container listing col-12 col-md-4">
         <div class="row">
           <div class="listingImage col-12 col-md-12">
-            <a href="/campgrounds/<%= campground._id %>"><img src="<%= campground.image %>"></a>
+            <a href="/festivals/<%= campground._id %>"><img src="<%= campground.image %>"></a>
           </div>
           <div class="cardInfo col-md-12">
             <div class="row">
@@ -120,7 +120,7 @@
                   <p><%= campground.location %></p>
                 </div>
                 <div class="row col-12 extraInfo">
-                  <a class = "listingTitle col-5 col-md-12" href="/campgrounds/<%= campground._id %>"><%= campground.name %>
+                  <a class = "listingTitle col-5 col-md-12" href="/festivals/<%= campground._id %>"><%= campground.name %>
                     <div class="row genre">
                       <span class="col-12 orange"><%= campground.genre %></span>
                     </div>
@@ -186,13 +186,13 @@
           <% if (current == 1) { %>
             <li class="page-item disabled"><a class="page-link">First</a></li>
           <% } else { %>
-            <li class="page-item"><a class="page-link" href="/campgrounds<%if(search){%>?search=<%=search%><%}else if(multiDay){%>?multiday=<%=multiDay%><%}else if(camping){%>?camping=<%=camping%><%}else if(electronic){%>?electronic=<%=electronic%><%}else if(variety){%>?variety=<%=variety%><%}%>">First</a></li>
+            <li class="page-item"><a class="page-link" href="/festivals<%if(search){%>?search=<%=search%><%}else if(multiDay){%>?multiday=<%=multiDay%><%}else if(camping){%>?camping=<%=camping%><%}else if(electronic){%>?electronic=<%=electronic%><%}else if(variety){%>?variety=<%=variety%><%}%>">First</a></li>
           <% } %>
    
           <% if (current == 1) { %>
             <li class="page-item disabled"><a class="page-link">«</a></li>
           <% } else { %>
-            <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= Number(current) - 1 %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">«</a></li>
+            <li class="page-item"><a class="page-link" href="/festivals?page=<%= Number(current) - 1 %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">«</a></li>
           <% } %>
    
           <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
@@ -203,7 +203,7 @@
             <% if (i == current) { %>
               <li class="page-item active"><a class="page-link"><%= i %></a></li>
             <% } else { %>
-              <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= i %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>"><%= i %></a></li>
+              <li class="page-item"><a class="page-link" href="/festivals?page=<%= i %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>"><%= i %></a></li>
             <% } %>
             <% if (i == Number(current) + 4 && i < pages) { %>
               <li class="page-item disabled"><a class="page-link">...</a></li>
@@ -213,13 +213,13 @@
           <% if (current == pages) { %>
             <li class="page-item disabled"><a class="page-link">»</a></li>
           <% } else { %>
-            <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= Number(current) + 1 %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">»</a></li>
+            <li class="page-item"><a class="page-link" href="/festivals?page=<%= Number(current) + 1 %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">»</a></li>
           <% } %>
    
           <% if (current == pages) { %>
             <li class="page-item disabled"><a class="page-link">Last</a></li>
           <% } else { %>
-            <li class="page-item"><a class="page-link" href="/campgrounds?page=<%= pages %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">Last</a></li>
+            <li class="page-item"><a class="page-link" href="/festivals?page=<%= pages %><%if(search){%>?search=<%=search%><%}else if(multiDay){%>&multiday=<%=multiDay%><%}else if(camping){%>&camping=<%=camping%><%}else if(electronic){%>&electronic=<%=electronic%><%}else if(variety){%>&variety=<%=variety%><%}%>">Last</a></li>
           <% } %>
       </ul>
       <% } %>

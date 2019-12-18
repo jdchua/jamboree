@@ -20,14 +20,14 @@
             <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a id="landingRight1" href="/login">REGISTER</a></li>
         <% } else { %>
             <li><a  href="#">Signed In As <%= currentUser.username %></a></li>
-            <li><a class="submitBtn" href="/campgrounds/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
+            <li><a class="submitBtn" href="/festivals/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
             <li><a href="/logout">SIGN OUT</a></li>
         <% } %>
 </div>
 
 
 <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" id="brand" href="/campgrounds">Jamboree</a>
+  <a class="navbar-brand" id="brand" href="/festivals">Jamboree</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="openMainNav()">
     <i class="fas fa-bars"></i>
   </button>
@@ -39,7 +39,7 @@
             <li class="<%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a id="landingRight1" href="/login">REGISTER</a></li>
         <% } else { %>
             <li><a id="landingRight" href="#">Signed In As <%= currentUser.username %></a></li>
-            <li><a id="landingRight" class="submitBtn" href="/campgrounds/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
+            <li><a id="landingRight" class="submitBtn" href="/festivals/new">Submit New<i class="fas fa-plus-circle"></i></a></li>
             <li><a id="landingRight1" href="/logout">SIGN OUT</a></li>
         <% } %>
     </ul>

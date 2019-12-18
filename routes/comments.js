@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router({mergeParams: true});
-var Campground = require("../models/campground");
+var Festival = require("../models/festival");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
 //Comments New
 router.get("/new", middleware.isLoggedIn, function(req, res){
-    //find campground by id
-    Campground.findById(req.params.id, function(err, campground){
+    //find festival by id
+    Festival.findById(req.params.id, function(err, campground){
         if (err){
             console.log(err);
         } else {
@@ -18,11 +18,11 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 
 //Comments Create
 router.post("/", middleware.isLoggedIn, function(req, res){
-   //lookup campground using ID
-   Campground.findById(req.params.id, function(err, campground){
+   //lookup festival using ID
+   Festival.findById(req.params.id, function(err, campground){
       if (err){
           console.log(err);
-          res.redirect("/campgrounds");
+          res.redirect("/festivals");
       } else {
           Comment.create(req.body.comment, function(err, comment){
               if (err){
@@ -38,7 +38,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                   campground.save();
                   console.log();
                   req.flash("success", "Successfully added comment");
-                  res.redirect("/campgrounds/" + campground._id);
+                  res.redirect("/festivals/" + campground._id);
               }
           });
       }
@@ -62,7 +62,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
         if (err){
             res.redirect("back");
         } else {
-            res.redirect("/campgrounds/" + req.params.id);
+            res.redirect("/festivals/" + req.params.id);
         }
     }) 
 });
@@ -73,12 +73,12 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, re
        if (err){
            res.redirect("back");
        } else {
-           Campground.findByIdAndUpdate(req.params.id, {$pull: {comments: req.params.comment_id}}, function(err, data){
+           Festival.findByIdAndUpdate(req.params.id, {$pull: {comments: req.params.comment_id}}, function(err, data){
                if (err){
                    console.log(err);
                } else {
                     req.flash("success", "Comment Deleted");
-                    res.redirect("/campgrounds/" + req.params.id);
+                    res.redirect("/festivals/" + req.params.id);
                }
            });
        }

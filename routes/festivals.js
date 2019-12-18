@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var Campground = require("../models/campground");
+var Festival = require("../models/festival");
 var middleware = require("../middleware");
 
 var NodeGeocoder = require('node-geocoder');
@@ -14,7 +14,7 @@ var options = {
  
 var geocoder = NodeGeocoder(options);
 
-// INDEX - show all campgrounds
+// INDEX - show all festivals
 router.get("/", function(req, res){
     var perPage = 9;
     var pageQuery = parseInt(req.query.page);
@@ -22,18 +22,18 @@ router.get("/", function(req, res){
     var noMatch = null;
     if (req.query.search) {
         var regex = new RegExp(escapeRegex(req.query.search), "gi");
-        //find campgrounds in DB
-        Campground.find({name: regex}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({name:regex}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({name: regex}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({name:regex}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                     res.redirect("back");
                 } else {
                     if(allCampgrounds.length < 1) {
-                        noMatch = "No campgrounds match that query, please try again.";
+                        noMatch = "No festivals match that query, please try again.";
                     }
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -49,14 +49,14 @@ router.get("/", function(req, res){
             });
         });
     } else if (req.query.multiday) {
-        //find campgrounds in DB
-        Campground.find({multiDay: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({multiDay: "yes"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({multiDay: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({multiDay: "yes"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -72,14 +72,14 @@ router.get("/", function(req, res){
             });
         });
     } else if (req.query.camping) {
-        //find campgrounds in DB
-        Campground.find({camping: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({camping: "yes"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({camping: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({camping: "yes"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -95,14 +95,14 @@ router.get("/", function(req, res){
             });
         }); 
     } else if (req.query.electronic) {
-        //find campgrounds in DB
-        Campground.find({genre: "Electronic"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({genre: "Electronic"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({genre: "Electronic"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({genre: "Electronic"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -118,14 +118,14 @@ router.get("/", function(req, res){
             });
         });
     } else if (req.query.variety) {
-        //find campgrounds in DB
-        Campground.find({genre: "Variety"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({genre: "Variety"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({genre: "Variety"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({genre: "Variety"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -142,14 +142,14 @@ router.get("/", function(req, res){
             });
         });
     } else if (req.query.hiphop) {
-        //find campgrounds in DB
-        Campground.find({genre: "Hip-Hop"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({genre: "Hip-Hop"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({genre: "Hip-Hop"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({genre: "Hip-Hop"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -166,14 +166,14 @@ router.get("/", function(req, res){
             });
         });
     } else if (req.query.allAges) {
-        //find campgrounds in DB
-        Campground.find({allAges: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.find({allAges: "yes"}).count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({allAges: "yes"}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.find({allAges: "yes"}).count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -189,14 +189,14 @@ router.get("/", function(req, res){
             });
         });
     } else {
-        //find campgrounds in DB
-        Campground.find({}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
-            Campground.count().exec(function (err, count) {
+        //find festivals in DB
+        Festival.find({}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, allCampgrounds) {
+            Festival.count().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
-                    res.render("campgrounds/index", {
-                        campgrounds: allCampgrounds,
+                    res.render("festivals/index", {
+                        festivals: allCampgrounds,
                         current: pageNumber,
                         pages: Math.ceil(count / perPage),
                         noMatch: noMatch,
@@ -214,9 +214,9 @@ router.get("/", function(req, res){
     }
 });
 
-//CREATE - add new campground to DB
+//CREATE - add new festival to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
-   // get data from form and add to campgrounds array
+   // get data from form and add to festivals array
    var name = req.body.name;
    var website = req.body.website;
    var genre = req.body.genre;
@@ -241,45 +241,45 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         var lng = data[0].longitude;
         var location = data[0].formattedAddress;
         var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng, multiDay: multiDay, camping: camping, price: price, website: website, lineup: lineup, genre: genre, allAges: allAges};
-     // Create a new campground and save to DB
-       Campground.create(newCampground, function(err, newlyCreated){
+     // Create a new festival and save to DB
+       Festival.create(newCampground, function(err, newlyCreated){
            if (err){
                console.log(err);
            } else {
-                // redirect back to campgrounds page
+                // redirect back to festivals page
                 console.log(newlyCreated);
-               res.redirect("/campgrounds");
+               res.redirect("/festivals");
            }
        });
    });
 });
 
 
-// NEW - show form to create new campground
+// NEW - show form to create new festival
 router.get("/new", middleware.isLoggedIn, function(req, res){
-    res.render("campgrounds/new");
+    res.render("festivals/new");
 });
 
-// SHOW - shows more info about one campground
+// SHOW - shows more info about one festival
 router.get("/:id", function(req, res){
-    //find the campground with provided ID
-    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+    //find the festival with provided ID
+    Festival.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
        if (err || !foundCampground){
            console.log(err);
-           req.flash("error", "Sorry, that campground does not exist");
-           return res.redirect("/campgrounds");
+           req.flash("error", "Sorry, that festival does not exist");
+           return res.redirect("/festivals");
        } else {
            console.log(foundCampground);
-           //render show template with that campground
-           res.render("campgrounds/show", {campground: foundCampground});
+           //render show template with that festival
+           res.render("festivals/show", {campground: foundCampground});
        }
     });
 });
 
 //EDIT CAMPGROUND ROUTE
 router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res){
-    Campground.findById(req.params.id, function(err, foundCampground){
-        res.render("campgrounds/edit", {campground: foundCampground});
+    Festival.findById(req.params.id, function(err, foundCampground){
+        res.render("festivals/edit", {campground: foundCampground});
     });
 });
 
@@ -295,14 +295,14 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
         req.body.campground.lng = data[0].longitude;
         req.body.campground.location = data[0].formattedAddress;
    
-     //find and update the correct campground
-       Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
+     //find and update the correct festival
+       Festival.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
            if (err){
                req.flash("error", err.message);
-               res.redirect("/campgrounds");
+               res.redirect("/festivals");
            } else {
                req.flash("success", "Successfully Updated!");
-               res.redirect("/campgrounds/" + req.params.id);
+               res.redirect("/festivals/" + req.params.id);
            }
        });
     });
@@ -310,11 +310,11 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 
 //DESTROY CAMPGROUND ROUTE
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
-    Campground.findByIdAndRemove(req.params.id, function(err){
+    Festival.findByIdAndRemove(req.params.id, function(err){
         if (err){
-            res.redirect("/campgrounds");
+            res.redirect("/festivals");
         } else {
-            res.redirect("/campgrounds");
+            res.redirect("/festivals");
         }
     });
 });

@@ -27,7 +27,7 @@ router.post("/register", function(req, res){
        } 
        passport.authenticate("local")(req, res, function(){
            req.flash("success", "Welcome to FestivalCamp " + user.username);
-           res.redirect("/campgrounds");
+           res.redirect("/festivals");
        });
     });
 });
@@ -40,7 +40,7 @@ router.get("/login", function(req, res){
 //handling login logic
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect:"/campgrounds",
+        successRedirect:"/festivals",
         failureRedirect:"/login",
         failureFlash: "Invalid username or password."
     }), function(req, res){
@@ -50,7 +50,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
    req.logout(); 
    req.flash("success", "Logged you out!!!");
-   res.redirect("/campgrounds");
+   res.redirect("/festivals");
 });
 
 module.exports = router;

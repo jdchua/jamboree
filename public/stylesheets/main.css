@@ -705,11 +705,11 @@ rated stars
         padding: 0 30px;
     }
     
-    .listing:nth-of-type(1), .listing:nth-of-type(4) {
+    .listing:nth-of-type(1), .listing:nth-of-type(4), .listing:nth-of-type(7) {
         padding-left: 45px;
     }
     
-    .listing:nth-of-type(3), .listing:nth-of-type(6) {
+    .listing:nth-of-type(3), .listing:nth-of-type(6), .listing:nth-of-type(9) {
         padding-right: 45px;
     }
     

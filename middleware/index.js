@@ -1,17 +1,17 @@
-var Campground = require("../models/campground");
+var Festival = require("../models/festival");
 var Comment = require("../models/comment");
 // all the middleware goes here
 var middlewareObj = {};
 
 middlewareObj.checkCampgroundOwnership = function(req, res, next){
     if(req.isAuthenticated()){
-        // does user own the campground?
-        Campground.findById(req.params.id, function(err, foundCampground){
+        // does user own the festival?
+        Festival.findById(req.params.id, function(err, foundCampground){
             if (err || !foundCampground){
-                req.flash("error", "Campground not found");
+                req.flash("error", "Festival not found");
                 res.redirect("back");
             } else {
-                 // does user own the campground?
+                 // does user own the festival?
                  if (foundCampground.author.id.equals(req.user._id) || req.user.isAdmin){
                      next();
                  } else {

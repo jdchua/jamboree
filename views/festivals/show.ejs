@@ -18,10 +18,10 @@
           </div>
           <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) { %>
             <div class="col-12">
-            <form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
+            <form class="delete-form" action="/festivals/<%=campground._id%>?_method=DELETE" method="POST">
                 <button id="festivalDelete" class="festivalEdit">Delete</button>
             </form>
-            <a class="festivalEdit" href="/campgrounds/<%=campground._id %>/edit">Edit</a>
+            <a class="festivalEdit" href="/festivals/<%=campground._id %>/edit">Edit</a>
             </div>
           <% } %>
   </div>
@@ -129,7 +129,7 @@
               <% } %>
               <% if(currentUser) { %>
                 <!--If the user is logged in, show the new comment form-->
-                <form id="add-comment-form" action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                <form id="add-comment-form" action="/festivals/<%= campground._id %>/comments" method="POST">
                   <div class="form-group">
                     <input class="form-control" type="text" disabled value="<%= currentUser.username %>">
                   </div>
@@ -185,7 +185,7 @@
                     <!--If the visitor is logged in and the owner of the comment, show the edit and delete buttons-->
                     <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
                       <!--Delete comment button-->
-                      <form id="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
+                      <form id="delete-form" action="/festivals/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" style="display: inline;">
                         <button id="commentDelete" class="commentEdit">Delete</button>
                       </form>
                       <!--Edit button used for collapsing the edit comment form-->
@@ -198,7 +198,7 @@
                   <% if (currentUser && currentUser._id.equals(comment.author.id)) { %>
                     <div class="collapse col-12" id="collapseEdit<%= comment._id %>">
                       <div class="well" style="border-left: 5px solid #ffbb33; margin-top: 15px;">
-                        <form id="edit-comment-form<%= comment._id %>" class="editComment" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                        <form id="edit-comment-form<%= comment._id %>" class="editComment" action="/festivals/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
                             <div class="form-group">
                               <input class="form-control" type="text" disabled value="<%= currentUser.username %>">
                             </div>
