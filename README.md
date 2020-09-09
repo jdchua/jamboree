@@ -1,4 +1,4 @@
-# FestivalCamp
+# Jamboree
 <img src="https://i.lensdump.com/i/iYsjHv.png">
 
 Web application where users can share and leave reviews for music festivals.  Allows registered users to have access to an all-in-one site for experiences and information on a specific music festival.

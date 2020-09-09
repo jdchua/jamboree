@@ -11,6 +11,7 @@ body, html {
   z-index: 0;
   background-image: url(https://cdn2.lamag.com/wp-content/uploads/sites/6/2020/01/GettyImages-1144246829.jpg);
   min-height: 100%;
+  transition: background-image 0.5s ease-in-out;
 }
 
 #brand {
