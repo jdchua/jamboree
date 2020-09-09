@@ -5,9 +5,6 @@
           <div class="thumbnail">
             <img class="img-responsive" src="<%= campground.image %>">
             <div class="row caption-full">
-              <!--<h4 class="pull-right campgroundPrice">-->
-              <!--  $<%=campground.price%> for <%if (campground.multiDay === "yes") {%>Multiple Days<% } else { %>1 Day<% } %>-->
-              <!--</h4>-->
               <h4 class="col-8 campgroundName"><%=campground.name%></h4>
               <h5 class="col-4 showGenre orange"><%=campground.genre%></h5>
 
@@ -125,7 +122,7 @@
             <div class="well" style="border-left: 5px solid #00C851;">
               <% if(!currentUser) { %>
                 <!--If the user is not logged in, direct him to the login page-->
-                <h5>You need to login before you can comment. <a href="/login">Click here</a> to go to the login page.</h5>
+                <h5>You need to login before you can comment. <a class="commentLogin" href="/login">Click here</a> to go to the login page.</h5>
               <% } %>
               <% if(currentUser) { %>
                 <!--If the user is logged in, show the new comment form-->
@@ -204,7 +201,7 @@
                             </div>
                             <div class="form-group starsRating1">
                               <span>Rate This Festival</span>
-                              <% if (comment.rating===5) { %>
+                              <% if (comment.rating === 5) { %>
                                 <input id="star51" type="radio" checked value=5 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
                                 <label for="star51"></label>
                                 <input id="star41" type="radio" value=4 name="comment[rating]" form="edit-comment-form<%= comment._id %>"/>
@@ -262,7 +259,7 @@
                               <% } %>
                             </div>
                             <div class="form-group">
-                              <textarea class="form-control textArea" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
+                              <textarea class="form-control textArea" name="comment[text]" form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
                             </div>
                             <div class="form-group">
                               <button class="editPost">Edit Review</button>

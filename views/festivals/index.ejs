@@ -11,7 +11,7 @@
       <div id="search" class="form-group row">
         <input type="text" name="search" placeholder="Search For Festivals" class="form-control col-8">
         <div class="searchBtn input-group-append">
-          <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+          <button class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
       </div>
     </form>
@@ -142,9 +142,9 @@
                     </div> 
                     <div class="col-6 col-md-3 indexFeatures">
                           <% if (campground.allAges === "yes") { %>
-                            <span style="color:green;" class="extraIcons">18+</span>
-                          <% } else { %>
                             <span style="color:green;" class="agesIcon">All Ages</span>
+                          <% } else { %>
+                            <span style="color:green;" class="extraIcons">18+</span>
                           <% } %>                       
                       </div>
                     <div class="col-6 col-md-3 indexFeatures">

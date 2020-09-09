@@ -119,7 +119,7 @@ body {
         margin-right: auto;
     }
     
-    .searchBtn span {
+    .searchBtn button {
         background-color: deeppink;
         border-color: deeppink;
     }
@@ -305,6 +305,10 @@ img {
     margin-top: 10px;
     padding-left: 31px;
     padding-right: 30px;
+}
+
+.commentLogin:hover {
+    color: blue;
 }
 
 .showDescription {
