@@ -18,8 +18,7 @@ var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/festivals"),
     indexRoutes = require("./routes/index");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/FestivalCamp"
-mongoose.connect(url);
+mongoose.connect("mongodb+srv://jchua:festivaldatabase@cluster0.w2fsl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -54,6 +53,7 @@ app.use(indexRoutes);
 app.use("/festivals", campgroundRoutes);
 app.use("/festivals/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("Jamboree Has Started!!!"); 
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
